@@ -23,24 +23,7 @@ const NetflixSeries = () => {
     return genre;
   }
 
-  if(age<18){
-    return (
-      <div>
-        <div>
-          <img src="Slide1.png" alt="img not found" width="30%" height="30%" />
-        </div>
-        <h2>Name: {name}</h2>
-        <h3>Rating: {rating}</h3>
-        <h3>Rating: {5+3.2}</h3>
-        <h3>Rating: {summary}</h3>
-        <h3>Genre: {returnGenre()}</h3>
-        <button>Not Available</button>
-        <p>
-        
-        </p>
-      </div>
-    );
-  }
+
   return (
     <div>
       <div>
@@ -51,7 +34,7 @@ const NetflixSeries = () => {
       <h3>Rating: {5+3.2}</h3>
       <h3>Rating: {summary}</h3>
       <h3>Genre: {returnGenre()}</h3>
-      <button>Watch Now</button>
+      <button>{age>18?"watch now":"not available"}</button>
       <p>
       
       </p>
