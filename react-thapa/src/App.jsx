@@ -1,3 +1,4 @@
+
 import React, { Fragment } from "react";
 
 export const App = () => {
@@ -42,6 +43,7 @@ export const App = () => {
    <NetflixSeries />
    <NetflixSeries />
   </>
+
 
 
 
