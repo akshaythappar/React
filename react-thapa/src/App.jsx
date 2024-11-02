@@ -1,13 +1,53 @@
+
+import React, { Fragment } from "react";
+
 export const App = () => {
-  return (
-    <div>
-      <NetflixSeries />
-      <NetflixSeries />
-      <NetflixSeries />
-      <NetflixSeries />
-      <NetflixSeries />
-    </div>
-  );
+  // return (
+  //   <div>
+  //     <NetflixSeries />
+  //     <NetflixSeries />
+  //     <NetflixSeries />
+  //     <NetflixSeries />
+  //     <NetflixSeries />
+  //   </div>
+  // );
+  // Instead of above code we can do this 
+
+  // Method->1 
+  // return ([<NetflixSeries key={1}/>,<NetflixSeries key={2}/>])
+
+  //Method->2
+  // return (<React.Fragment>
+  //    <NetflixSeries />
+  //   <NetflixSeries />
+  //   <NetflixSeries />
+  //   <NetflixSeries />
+  //   <NetflixSeries />
+  // </React.Fragment>);
+
+  // OR 
+
+  // return (<Fragment>
+  //    <NetflixSeries />
+  //   <NetflixSeries />
+  //   <NetflixSeries />
+  //   <NetflixSeries />
+  //   <NetflixSeries />
+  // </Fragment>) ; // fro this you can deireclty write import {Fragment} from 'react' this is array destructuring;
+
+  //Method->3
+  return <>
+   <NetflixSeries />
+   <NetflixSeries />
+   <NetflixSeries />
+   <NetflixSeries />
+   <NetflixSeries />
+  </>
+
+
+
+
+
 };
 
 const NetflixSeries = () => {
