@@ -35,6 +35,32 @@
 // export default App
 
 
+
+import React from "react";
+// export const App = () =>{
+//   // return React.createElement("h1",null,"Hello World");
+//   return <h1>Hello World</h1>;
+// }
+
+// One method is to directly return this 
+{/* <h1>Hello world</h1> */}
+
+// or another method is to return this
+
+// React.createElement("h1",null,"Hello World");
+
+// console.log(React.createElement("h1",null,"Hello World"));
+
+
 export const App = () =>{
-  return <h1>Hare Krishna</h1>
+  return <div>
+    <div><img src="Slide1.png" alt="img not found" width="30%" height="30%" /></div>
+    <h2>Name: Queen of Starts</h2>
+    <h3>Rating: 8.3</h3>
+    <p>Summary: Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ratione, nihil nemo eaque voluptatibus reprehenderit accusantium omnis! Nisi eveniet similique qui ex, minima ipsum excepturi asperiores commodi sunt enim ullam quam quidem expedita assumenda porro optio tempora laudantium aliquam eos velit illo maxime! Atque debitis commodi suscipit.</p>
+  </div>
 }
+
+
+
+
