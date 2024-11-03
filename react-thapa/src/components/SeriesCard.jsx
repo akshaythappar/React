@@ -1,6 +1,6 @@
-export const SeriesCard = (props) =>{
-    console.log(props);
-    const {id,img_url,name,rating,description,cast,genre,watch_url} = props.currElem;
+export const SeriesCard = ({currElem}) =>{
+    // console.log(props);
+    const {id,img_url,name,rating,description,cast,genre,watch_url} = currElem;
         return <>
         <li>
           <div>
