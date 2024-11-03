@@ -1,42 +1,31 @@
+import seriesData from "../api/seriesData.json";
+
 const NetflixSeries = () => {
-    const age=21;
-    const canWatch = () =>{
-      if(age>18) return "Watch now";
-      return "not available";
-    }
-    const name = "Queen of Starts";
-    const rating = 8.2;
-    const summary = "Summary: Lorem ipsum, dolor sit amet consectetur adipisicing elit Ratione, nihil nemo eaque voluptatibus reprehenderit accusantium omnis! Nisi eveniet similique qui ex, minima ipsum excepturi asperiores commodisunt enim ullam quam quidem expedita assumenda porro optio temporalaudantium aliquam eos velit illo maxime! Atque debitis commodi suscipit.";
-    const returnGenre = () =>{
-      const genre = "RomCom";
-      return genre;
-    }
-  
-  
-    return (
-      <div>
-        <div>
-          <img src="Slide1.png" alt="img not found" width="30%" height="30%" />
-        </div>
-        <h2>Name: {name}</h2>
-        <h3>Rating: {rating}</h3>
-        <h3>Rating: {5+3.2}</h3>
-        <h3>Rating: {summary}</h3>
-        <h3>Genre: {returnGenre()}</h3>
-        <button>{canWatch()}</button>
-        <p>
-        
-        </p>
-      </div>
-    );
-  };
+  return (
+    <ul>
+      {seriesData.map((currElem) => {
+        return (
+        <li key={currElem.id}>
+          <div>
+            <img
+              src={currElem.img_url}
+              alt={currElem.name}
+              width="30%"
+              height="30%"
+            />
+          </div>
+          <h2>Name: {currElem.name}</h2>
+          <h3>Rating: {currElem.rating}</h3>
+          <h3>Summary: {currElem.description}</h3>
+          <h3>Genre: {currElem.genre}</h3>
+          <p>Cast: {currElem.cast}</p>
+          <a href={currElem.watch_url} target="_blank">
+            <button>Watch</button>
+          </a>
+        </li>);
+      })}
+    </ul>
+  );
+};
 
 export default NetflixSeries;
-
-
-export const Header = () =>{
-     return <p>Header</p>
-}
-export const  Footer = () =>{
-    return <p>Footer </p>
-}
