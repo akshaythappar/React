@@ -6,9 +6,6 @@ const NetflixSeries = () => {
     <ul className="grid grid-three-cols">
       {seriesData.map((currElem) => (<SeriesCard key={currElem.id} currElem={currElem}/>))} 
       {/* in the above part you don't have to write return keyword as you are returing only single thing */}
-
-      
-      
     </ul>
   );
 };
