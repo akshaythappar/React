@@ -15,10 +15,11 @@ export default Profile;
 
 
 function ProfileCard(props){
+    const {name,age,greeting,children}=props;
     return <>
-    <h2>Name : {props.name}</h2>
-    <p>Age : {props.age}</p>
-    <p>{props.greeting}</p>
-    <div>{props.children}</div>
+    <h2>Name : {name}</h2>
+    <p>Age : {age}</p>
+    <p>{greeting}</p>
+    <div>{children}</div>
     </>
 }
