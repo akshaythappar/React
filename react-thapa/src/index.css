@@ -66,3 +66,28 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+
+
+
+/* custom css added by me  */
+
+.container{
+  max-width: 142rem;
+  margin: 0 auto;
+  padding: 9.6rem 4.2rem;
+}
+
+
+.grid{
+  display: grid;
+  gap: 9.6rem;
+}
+
+.grid-two-cols{
+  grid-template-columns: repeat(2,1fr);
+}
+
+.grid-three-cols{
+  grid-template-columns: repeat(3,1fr);
+}
