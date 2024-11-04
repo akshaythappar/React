@@ -1,3 +1,14 @@
+.card{
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+img{
+    width: 100%;
+}
 .card-heading{
     margin-bottom: 3.2rem;
+}
+
+.card-content{
+    padding:3.2rem 0.6rem;
 }
