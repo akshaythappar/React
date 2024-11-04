@@ -15,3 +15,11 @@ img{
 .card-content{
     padding:3.2rem 0.6rem;
 }
+
+.super-hit{
+    background-color: #7dcea0;
+}
+
+.average{
+    background-color: #f7dc6f;
+}
