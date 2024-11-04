@@ -2,6 +2,7 @@ export const SeriesCard = ({ currElem }) => {
   // console.log(props);
   const { id, img_url, name, rating, description, cast, genre, watch_url } =
     currElem;
+    const btn_style={ padding: "1.2rem 2.4rem" ,border:'none',backgroundColor:"var(--btn-hover-bg-color)",color:"var(--color)"};
   return (
     <>
       <li className="card">
@@ -15,7 +16,7 @@ export const SeriesCard = ({ currElem }) => {
           <p>Genre: {genre}</p>
           <p>Cast: {cast}</p>
           <a href={watch_url} target="_blank">
-            <button style={{ padding: "1.2rem 2.4rem" ,border:'none',backgroundColor:"var(--btn-hover-bg-color)",color:"var(--color)"}}>Watch</button>
+            <button style={btn_style}>Watch</button>
           </a>
         </div>
       </li>
