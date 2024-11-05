@@ -1,0 +1,37 @@
+.card{
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+img{
+    width: 100%;
+}
+.card-heading{
+    margin-bottom: 3.2rem;
+}
+
+.card-content{
+    padding:3.2rem 0.6rem;
+}
+
+.super_hit{
+    background-color: #7dcea0;
+}
+
+.average{
+    background-color: #f7dc6f;
+}
+
+
+.rating {
+    padding: 0.3rem 1.8rem;
+    color: #000;
+    margin-left: 1.2rem;
+    border-radius: 100rem;
+    -webkit-border-radius: 100rem;
+    -moz-border-radius: 100rem;
+    -ms-border-radius: 100rem;
+    -o-border-radius: 100rem;
+    }
