@@ -29,13 +29,13 @@ export const SeriesCard = ({ currElem }) => {
   // in styled componet , you can pass the funciton within the template literal to dynamically set css properties based on props and states
 
   const Button = styled.button`
-    padding: "1.2rem 2.4rem"
-    border: "none"
-    background-color: ${(props) => (props.rating > 8.5 ? "#7dcea0" : "#f7dc6f")}
-    color: "var(--color)"
-    font-weight:"bold"
-    cursor:"pointer"
-  `;
+  padding: 1.2rem 2.4rem;
+  border: none;
+  background-color: ${(props) => (props.rating > 8.5 ? "#7dcea0" : "#f7dc6f")};
+  color: var(--color);
+  font-weight: bold;
+  cursor: pointer;
+`;
   const Rating = styled.h3`
     font-size: 1.6rem;
     color: #7dcea0;
@@ -48,14 +48,15 @@ export const SeriesCard = ({ currElem }) => {
         <div>
           <img src={img_url} alt={name} width="30%" height="30%" />
         </div>
-        <div className={styles["card-content"]}>
+        {/* <div className={styles["card-content"]}> */}
+        <div className="flex flex-col gap-6 py-6 px-6 ">
           <h2>Name: {name}</h2>
           {/* <h3>Rating: <span style={{backgroundColor:rating>8.5?"green":"red"}}>{rating}</span></h3> */}
           <Rating>
             Rating:{" "}
             <span className={`${styles.rating} ${ratingClass}`}>{rating}</span>
           </Rating>
-          <p>Summary: {description}</p>
+          <p className="text-1xl font-bold underline">Summary: {description}</p>
           <p>Genre: {genre.join(",")}</p>
           <p>Cast: {cast.join(",")}</p>
           <a href={watch_url} target="_blank">
