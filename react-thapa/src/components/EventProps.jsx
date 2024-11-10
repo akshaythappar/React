@@ -8,19 +8,23 @@ export const EventProps = () =>{
     }
 
     return (<>
-     <WelcomeUser onClick={()=>HandleWelcomeUser("Vinod")} onMouseEnter={handlehover}/>
+    {/* in the parent component don't need to write it as onClick we can write as we wish */}
+     {/* <WelcomeUser onClick={()=>HandleWelcomeUser("Vinod")} onMouseEnter={handlehover}/> */}
+     
+     
+     <WelcomeUser onButtonClick={()=>HandleWelcomeUser("Vinod")} onMouseEnter={handlehover}/>
     </>)
 }
 
 
 const WelcomeUser = (props) =>{
-    const {onClick,onMouseEnter} = props;
+    const {onButtonClick,onMouseEnter} = props;
     const hanldGreeting = () =>{
         console.log(`Hey user welcome`);
-        onClick();
+        onButtonClick();
     }
     return (<>
-    <button onClick={onClick}>Click</button>
+    <button onClick={onButtonClick}>Click</button>
     <button onMouseEnter={onMouseEnter}>Hover Me</button>
     <button onClick={hanldGreeting}>Greetings</button>
     </>)
