@@ -14,13 +14,14 @@ export const EventProps = () =>{
 
 
 const WelcomeUser = (props) =>{
+    const {onClick,onMouseEnter} = props;
     const hanldGreeting = () =>{
         console.log(`Hey user welcome`);
-        props.onClick();
+        onClick();
     }
     return (<>
-    <button onClick={props.onClick}>Click</button>
-    <button onMouseEnter={props.onMouseEnter}>Hover Me</button>
+    <button onClick={onClick}>Click</button>
+    <button onMouseEnter={onMouseEnter}>Hover Me</button>
     <button onClick={hanldGreeting}>Greetings</button>
     </>)
 }
