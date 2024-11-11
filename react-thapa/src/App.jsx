@@ -1,18 +1,11 @@
 import React from "react";
-import { Sibling, State } from "./components/State";
-import { DerivedState } from "./components/DerivedState";
-
-
-
-
-
+import "./components/EV.css"
+import { LiftStateUp } from "./components/LiftStateUp";
 export const App = () => {
   return (
-    <>
+     <>
       <section className="contianer">
-       {/* <State/>
-       <Sibling/> */}
-       <DerivedState/>
+      <LiftStateUp/>
       </section>
     </>
   );
