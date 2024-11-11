@@ -9,6 +9,10 @@ export const DerivedState = () => {
       {name:"Charlie",age:35},
       {name:"Angles",age:45},
     ]);
+    const userCount = users.length;  // so when our variable depends on the state or props then it is known as derived state 
+    const averageAge = users.reduce((accum,currElem)=>accum+currElem.age,0)/userCount;
+
+
   return <div className="main-div">
     <h1>Users List</h1>
     <ul>
@@ -16,6 +20,10 @@ export const DerivedState = () => {
       return <li key={index}>{currElem.name}-{currElem.age} year old</li>
     })}
     </ul>
+    <p>User Count: {userCount}</p>
+    <p>Average: {averageAge}</p>
+    
+
 
   </div>;
 };
