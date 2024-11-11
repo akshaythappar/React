@@ -1,5 +1,5 @@
 import React from "react";
-import { State } from "./components/State";
+import { Sibling, State } from "./components/State";
 
 
 
@@ -10,6 +10,7 @@ export const App = () => {
     <>
       <section className="contianer">
        <State/>
+       <Sibling/>
       </section>
     </>
   );
