@@ -1,18 +1,20 @@
-import { useState } from "react"
-import "./ToggleSwitch.css"
+import { useState } from "react";
+import "./ToggleSwitch.css";
 
-export const ToggleSwitch = () =>{
-    let [value,setValue]=useState(0);
-    const handleValue = ()=>{
-        
-        setValue(value?0:1);
-    }
-     return <>
-     <h1>{value}</h1>
-       <div className="parent" style={{backgroundColor:`${value?'green':'grey'}`}} onClick={handleValue}>
-        <div className={`circle ${value?'right':'left'}`} style={{border:"4px solid grey",borderRadius:"50px"}}>
-            <p>{value?'ON':'OFF'}</p>
+export const ToggleSwitch = () => {
+  const [isOn, setIsOn] = useState(false);
+  const checkIsOn=isOn ? "on" : "Off";
+  const toggleBGColor={backgroundColor:isOn?"#4caf50":"#f44336"}
+  const handleToggleSwitch = ()=>{
+    setIsOn(!isOn);
+  }
+  return (
+    <>
+      <div className="toggle-switch" onClick={handleToggleSwitch} style={toggleBGColor}>
+        <div className={`switch ${checkIsOn}`}>
+          <span className="switch-state">{checkIsOn}</span>
         </div>
-       </div>
-     </>
-}
+      </div>
+    </>
+  );
+};
