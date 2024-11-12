@@ -1,11 +1,10 @@
 import React from "react";
-import "./components/EV.css"
-// import { LiftStateUp } from "./components/LiftStateUp";
-import { ToggleSwitch } from "./components/Projects/ToggleSwitch/ToggleSwitch";
+import { ToDoApp } from "./components/Projects/ToDoApp/ToDoApp";
+
 export const App = () => {
   return (
      <>      
-      <ToggleSwitch/>
+      <ToDoApp/>
     </>
   );
 };
