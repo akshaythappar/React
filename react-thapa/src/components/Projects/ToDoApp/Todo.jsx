@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { MdCheck } from "react-icons/md";   
 import { MdDeleteForever } from "react-icons/md";
 import "./Todo.css"
@@ -6,20 +6,10 @@ import "./Todo.css"
 export const Todo = () => {
     const [inputValue,setInputValue]=useState("");
     const [task,setTask]=useState([]);
-    const [time,setTime]=useState("");
+    const[getDateTime,setDateTime]=useState("")
+    
 
-    const handleTime = () =>{
-        let time=new Date()
-        let hour=time.getHours();
-        let minute=time.getMinutes();
-        let seconds=time.getSeconds();
-        time=hour+ ":" + minute + ":" + seconds;
-        setTime(time);
-    }
-    setInterval(()=>{
-        handleTime();
-    },100)
-  
+   
     const handleInputChange = (value)=>{
         setInputValue(value);
     }
@@ -40,17 +30,38 @@ export const Todo = () => {
         setInputValue("");
 
 
-    }
-    
+    } 
+
+    // this is first mehtod wihtout useEffect
+     setInterval(() =>{
+        // to Do date and time
+        const now = new Date();
+        const formattedDate = now.toLocaleDateString();
+        const formattedTime = now.toLocaleTimeString();
+        setDateTime(`${formattedDate} - ${formattedTime}`)
+        
+       }, 1000);
+
+
+
+       useEffect(()=>{
+        const interval = setInterval(() =>{
+            // to Do date and time
+            const now = new Date();
+            const formattedDate = now.toLocaleDateString();
+            const formattedTime = now.toLocaleTimeString();
+            setDateTime(`${formattedDate} - ${formattedTime}`)
+            return ()=>clearInterval(interval);
+           }, 1000);
+       },[]);
+      // we have to use this clearnup function to avoid the memeory leak useeffect provide the clean up funciton 
 
     return (
         <section className="todo-container">
             <header>
                 {/* <h1>Todo List</h1> */}
+                <h2 className="date-time">Date-Time {getDateTime}</h2>
             </header>
-            <section className="time">
-              {time}
-            </section>
             <section className="form">
                 <form action="" onSubmit={handleFormSubmit}>
                     <div>
