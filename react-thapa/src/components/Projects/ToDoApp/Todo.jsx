@@ -56,6 +56,14 @@ export const Todo = () => {
        },[]);
       // we have to use this clearnup function to avoid the memeory leak useeffect provide the clean up funciton 
 
+      const handleDeleteTodo = (value)=>{
+       const updatedTask = task.filter((curTask)=>curTask!=value);
+       setTask(updatedTask);
+      }
+
+      const handleClearButton = () =>{
+        setTask([]);
+      }
     return (
         <section className="todo-container">
             <header>
@@ -87,12 +95,18 @@ export const Todo = () => {
                         <MdCheck />
                         </button>
                         </button>
-                        <button className="delete-btn">
+                        {/* <button className="delete-btn" onClick={handleDeleteTodo(index)}></button> */}
+                        {/* in the above line we can't pass the funciton like this if we have arguments to pass in the function this function will call automaticalyy without clcking the button to corerct this we will pass the callback funciton as specified in the below line"call me back" */}
+                        <button className="delete-btn" onClick={()=>handleDeleteTodo(curTask)}>
                         <MdDeleteForever />
                         </button>
                         </li>
                     })}
                 </ul>
+
+                <section>
+                    <button className="clear-btn" onClick={handleClearButton}>Clear All</button>
+                </section>
             </section>
         </section>
     )
