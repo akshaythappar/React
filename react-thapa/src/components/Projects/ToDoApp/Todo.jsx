@@ -5,11 +5,14 @@ import "./Todo.css"
 import { TodoForm } from "./TodoForm";
 import { TodoList } from "./TodoList";
 import { TodoDate } from "./TodoDate";
+import { setLocalStorageTodoData,getLocalStorageTodoData } from "./TodoLocalStorage";
+
+
+
 
 export const Todo = () => {
     
-    const [task,setTask]=useState([]);
-    
+    const [task,setTask]=useState(()=>getLocalStorageTodoData());
     
 
     const handleFormSubmit = (inputValue) =>{
@@ -26,10 +29,10 @@ export const Todo = () => {
          
         setTask((prevTask)=>[...prevTask,{id,content,checked}]);
 
-        
 
-
-    } 
+    }
+    
+    setLocalStorageTodoData(task);
    
 
     // this is first mehtod wihtout useEffect
@@ -50,6 +53,7 @@ export const Todo = () => {
       const handleDeleteTodo = (value)=>{
        const updatedTask = task.filter((curTask)=>curTask.content!=value);
        setTask(updatedTask);
+       localStorage.setItem(todoKey,JSON.stringify(task));
       }
 
       const handleClearButton = () =>{
