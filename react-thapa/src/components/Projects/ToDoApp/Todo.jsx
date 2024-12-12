@@ -13,14 +13,18 @@ export const Todo = () => {
     
 
     const handleFormSubmit = (inputValue) =>{
-        
-        if(!inputValue) return ;
+        const {id,content,checked}=inputValue;
+
+        // to check if the input field is empty or not
+        if(!content) return ;
         
         // by defalut which you will pass in the place of previous will act as the previouse value
         // setTask((prev)=>console.log(prev));
-        if(task.includes(inputValue)) return;
+        // to check if the data is already existing or not
+        const ifTodoContentMatched = task.find((currTask)=> currTask.content===content);
+        if(ifTodoContentMatched) return;
          
-        setTask((prevTask)=>[...prevTask,inputValue])
+        setTask((prevTask)=>[...prevTask,{id,content,checked}]);
 
         
 
@@ -44,12 +48,23 @@ export const Todo = () => {
       // we have to use this clearnup function to avoid the memeory leak useeffect provide the clean up funciton 
 
       const handleDeleteTodo = (value)=>{
-       const updatedTask = task.filter((curTask)=>curTask!=value);
+       const updatedTask = task.filter((curTask)=>curTask.content!=value);
        setTask(updatedTask);
       }
 
       const handleClearButton = () =>{
         setTask([]);
+      }
+
+      const handleCheckedTodo = (content)=>{
+        const updatedTask = task.map((curTask)=>{if(curTask.content===content) 
+          {
+            return {...curTask,checked:!curTask.checked}
+          }else{
+            return curTask;
+          }
+        });
+        setTask(updatedTask);
       }
     return (
         <section className="todo-container">
@@ -76,7 +91,7 @@ export const Todo = () => {
                 <ul>
                 
                 {task.map((curTask,index) => {
-                   <TodoList curTask={curTask} key={index} onHandleDeleteTodo={handleDeleteTodo}/>
+                  return  <TodoList data={curTask.content} key={curTask.id} onHandleDeleteTodo={handleDeleteTodo} onHandleCheckedTodo={handleCheckedTodo} checked={curTask.checked}/>
                     })}
                 </ul>
 
