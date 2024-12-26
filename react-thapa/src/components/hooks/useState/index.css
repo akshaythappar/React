@@ -1,0 +1,19 @@
+span{
+    font-size: 1.6rem;
+    font-weight: bold;
+    margin: 0 0.6rem;
+    color: #0eb7f4;
+}
+
+label,p{
+    font-size: 1.6rem;
+}
+
+p{
+    margin-bottom: 3.2rem;
+    font-size: 1.8rem;
+}
+
+button:hover{
+    opacity: 1;
+}
