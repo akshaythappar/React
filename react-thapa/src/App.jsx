@@ -5,6 +5,7 @@ import CounterChallenge from "./components/hooks/useState/ChallengeByThapa";
 
 import { RegistrationFrom } from "./components/hooks/useState/Registration";
 import { LoginForm } from "./components/hooks/useState/LoginForm";
+import { ContactForm } from "./components/hooks/useState/ContactForm";
 
 
 
@@ -14,7 +15,7 @@ export const App = () => {
      <>      
     
 
-    <LoginForm/>
+    <ContactForm/>
 
     </>
   );
