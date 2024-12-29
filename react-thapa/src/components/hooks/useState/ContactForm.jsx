@@ -1,21 +1,29 @@
 import { useState } from "react"
 
 export const ContactForm = ()=>{
-    const [username,setUsername]=useState("");
-    const [email,setEmail]=useState("");
-    const [message,setMessage]=useState("");
+     const [contact,setContacts]=useState({
+        username:"",
+        email:"",
+        message:"",
+     })
+
+     const handleInputChange = (e)=>{
+        const {name,value}=e.target;
+        // setContacts({...contact,[name]:value});
+        setContacts((prev)=>({
+            ...prev,[name]:value,
+        }))
+     }
 
     const handleFormSubmit = (e)=>{
        e.preventDefault();
        // if the key and value are same then not need to write both the value
-       const contactDate = {
-        username,
-        email,
-        message
-       }
-       console.log(contactDate);
+    
+       console.log(contact);
 
     }
+
+
 
     return (
         <>
@@ -25,13 +33,13 @@ export const ContactForm = ()=>{
                 <h1>Contact Form</h1>
                 <form action="" onSubmit={handleFormSubmit}>
                     <label htmlFor="username">UserName</label>
-                    <input type="text" name="username" required autoComplete="off" onChange={(e)=>setUsername(e.target.value)}  value={username}/>
+                    <input type="text" name="username" required autoComplete="off" onChange={handleInputChange}  value={contact.username}/>
 
                     <label htmlFor="email">Email</label>
-                    <input type="email" name="email" required autoComplete="off" onChange={(e)=>setEmail(e.target.value)} value={email}/>
+                    <input type="email" name="email" required autoComplete="off" onChange={handleInputChange} value={contact.email}/>
 
                     <label htmlFor="message">Message</label>
-                    <textarea name="message" type="password" required autoComplete="off" rows="6" onChange={(e)=>setMessage(e.target.value)} value={message}></textarea>
+                    <textarea name="message" type="password" required autoComplete="off" rows="6" onChange={handleInputChange} value={contact.message}></textarea>
 
                     <button>submit</button>
                 </form>
