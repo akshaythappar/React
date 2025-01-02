@@ -7,6 +7,7 @@ import { RegistrationFrom } from "./components/hooks/useState/Registration";
 import { LoginForm } from "./components/hooks/useState/LoginForm";
 import { ContactForm } from "./components/hooks/useState/ContactForm";
 import { ReactuseEffect } from "./components/hooks/useEffect";
+import { HowNotToFetchApi } from "./components/hooks/useEffect/HowNotToFetchApi";
 
 
 
@@ -14,9 +15,9 @@ export const App = () => {
 
   return (
      <>      
-    
+  
 
-    <Challenge/>
+    <HowNotToFetchApi/>
 
     </>
   );
