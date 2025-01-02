@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import {Counter} from  "./components/hooks/useState"
-import { Challenge } from "./components/hooks/useState/Challenge";
+import { Challenge } from "./components/hooks/useEffect/EffectChallenge";
 import CounterChallenge from "./components/hooks/useState/ChallengeByThapa";
 
 import { RegistrationFrom } from "./components/hooks/useState/Registration";
@@ -16,7 +16,7 @@ export const App = () => {
      <>      
     
 
-    <ReactuseEffect/>
+    <Challenge/>
 
     </>
   );
