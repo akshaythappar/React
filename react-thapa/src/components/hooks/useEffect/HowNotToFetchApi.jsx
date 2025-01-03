@@ -3,6 +3,8 @@ import "./Pokemon.css";
 
 export const HowNotToFetchApi = () => {
   const [pokemon, setPokemon] = useState(null);
+  const [loading,setLoading] = useState(true);
+ const [error ,setError]=useState("");
     //  const API = "https://pokeapi.co/api/v2/pokemon";
 //   const API = "https://pokeapi.co/api/v2/pokemon/pikachu";
   const API = "https://pokeapi.co/api/v2/pokemon/squirtle";
@@ -13,8 +15,9 @@ export const HowNotToFetchApi = () => {
       // .then((data) => console.log(data))
       .then((data) => {
         setPokemon(data);
+        setLoading(false);
       })
-      .catch((err) => console.log(err));
+      .catch((err) =>{ console.log(err); setLoading(false); setError(err);});
   };
 
 
@@ -24,10 +27,18 @@ export const HowNotToFetchApi = () => {
 
   console.log(pokemon);
 
-  if(!pokemon){
+  if(loading){
     return(
         <div>
             <h1>Loading...</h1>
+        </div>
+    )
+  }
+
+  if(error){
+    return(
+        <div>
+            <h1>Error : {error.message}</h1>
         </div>
     )
   }
@@ -44,6 +55,19 @@ export const HowNotToFetchApi = () => {
                     <img src={pokemon.sprites.other.dream_world.front_default} alt={pokemon.name} className="pokemon-image" />
                 </figure>
                 <h1>{pokemon.name}</h1>
+                <div className="grid-three-cols">
+                    <p className="pokemon-info">
+                        Height: <span>{pokemon.height}</span>
+                    </p>
+                    <p className="pokemon-info">
+                        Weight: <span>{pokemon.weight}</span>
+                    </p>
+                    <p className="pokemon-info">
+                        speed: <span>{pokemon.stats[5].base_stat}</span>
+                    </p>
+
+
+                </div>
             </li>
 
         </ul>
