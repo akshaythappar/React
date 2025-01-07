@@ -9,6 +9,7 @@ import { ContactForm } from "./components/hooks/useState/ContactForm";
 import { ReactuseEffect } from "./components/hooks/useEffect";
 import { HowNotToFetchApi } from "./components/hooks/useEffect/HowNotToFetchApi";
 import { MainComponent } from "./components/Projects/Pokemon/main";
+import { UseRef } from "./components/hooks/useRefs";
 
 
 
@@ -18,7 +19,7 @@ export const App = () => {
      <>      
   
 
-    <MainComponent/>
+    <UseRef/>
 
     </>
   );
