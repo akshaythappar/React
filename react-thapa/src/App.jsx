@@ -10,6 +10,7 @@ import { ReactuseEffect } from "./components/hooks/useEffect";
 import { HowNotToFetchApi } from "./components/hooks/useEffect/HowNotToFetchApi";
 import { MainComponent } from "./components/Projects/Pokemon/main";
 import { UseRef } from "./components/hooks/useRefs";
+import { ForwardRefs } from "./components/hooks/useRefs/forwardRef";
 
 
 
@@ -19,7 +20,7 @@ export const App = () => {
      <>      
   
 
-    <UseRef/>
+    <ForwardRefs/>
 
     </>
   );
