@@ -11,6 +11,7 @@ import { HowNotToFetchApi } from "./components/hooks/useEffect/HowNotToFetchApi"
 import { MainComponent } from "./components/Projects/Pokemon/main";
 import { UseRef } from "./components/hooks/useRefs";
 import { ForwardRefs } from "./components/hooks/useRefs/forwardRef";
+import { UseID } from "./components/hooks/useId";
 
 
 
@@ -20,7 +21,8 @@ export const App = () => {
      <>      
   
 
-    <ForwardRefs/>
+    <UseID/>
+    
 
     </>
   );
