@@ -1,4 +1,6 @@
-import { createContext, useContext } from "react";
+
+// import { createContext, useContext } from "react";
+import { createContext, use } from "react";
 
 // Step 1
 // it is not a variable it return the component thats why the first letter is capital
@@ -22,7 +24,7 @@ export const BioProvider = ({ children }) => {
 
 //custom hooks  
 export const useBioContext = () =>{
-  const context = useContext(BioContext);
+  const context = use(BioContext);
   // if(!context){
   if(context===undefined){
     throw new Error("Component must be wrapped with BioProvider")
