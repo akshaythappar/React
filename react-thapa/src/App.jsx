@@ -16,6 +16,7 @@ import { ParnetComponent } from "./components/PropDrilling";
 import { BioProvider } from "./components/hooks/ContextAPI";
 import { Home } from "./components/hooks/ContextAPI/Home";
 import { About } from "./components/hooks/ContextAPI/About";
+import { Service } from "./components/hooks/ContextAPI/Service";
 
 
 
@@ -29,7 +30,9 @@ export const App = () => {
     <Home/>
     <About/>
 
+ <Service/>
  </BioProvider>
+
 
     
 
