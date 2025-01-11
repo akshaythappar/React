@@ -12,6 +12,10 @@ import { MainComponent } from "./components/Projects/Pokemon/main";
 import { UseRef } from "./components/hooks/useRefs";
 import { ForwardRefs } from "./components/hooks/useRefs/forwardRef";
 import { UseID } from "./components/hooks/useId";
+import { ParnetComponent } from "./components/PropDrilling";
+import { BioProvider } from "./components/hooks/ContextAPI";
+import { Home } from "./components/hooks/ContextAPI/Home";
+import { About } from "./components/hooks/ContextAPI/About";
 
 
 
@@ -20,8 +24,13 @@ export const App = () => {
   return (
      <>      
   
+ <BioProvider>
 
-    <UseID/>
+    <Home/>
+    <About/>
+
+ </BioProvider>
+
     
 
     </>
