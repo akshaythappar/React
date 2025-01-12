@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import {Counter} from  "./components/hooks/useState"
+import { Counter } from "./components/hooks/useState";
 import { Challenge } from "./components/hooks/useEffect/EffectChallenge";
 import CounterChallenge from "./components/hooks/useState/ChallengeByThapa";
 
@@ -17,25 +17,19 @@ import { BioProvider } from "./components/hooks/ContextAPI";
 import { Home } from "./components/hooks/ContextAPI/Home";
 import { About } from "./components/hooks/ContextAPI/About";
 import { Service } from "./components/hooks/ContextAPI/Service";
-
-
+import { DarkLight } from "./components/DarkLight";
 
 export const App = () => {
-
   return (
-     <>      
-  
- <BioProvider>
+    <>
+      {/* <BioProvider>
 
     <Home/>
     <About/>
 
  <Service/>
- </BioProvider>
-
-
-    
-
+ </BioProvider> */}
+      <DarkLight/>
     </>
   );
 };
